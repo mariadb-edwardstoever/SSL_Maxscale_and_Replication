@@ -18,6 +18,11 @@ if [ ! -f myCA.pem ]; then
 exit 0
 fi
 
+if [ ! -f ${MY_ORGANIZATION}.key ]; then
+  TEMP_COLOR=lred; print_color "A key file ${MY_ORGANIZATION}.key does not exist. Run the script create_own_key.sh first.\n"; unset TEMP_COLOR; print_color "Nothing done.\n"
+exit 0
+fi
+
 if [ "$(cat OWN_org_details.cfg | tr -d "[:space:]" | md5sum |  cut -d' ' -f1)" == "f91a183804da859620e5c1ef6e4dfb52" ]; then
   TEMP_COLOR=lred; print_color "OWN_org_details.cfg has not been edited.\nYou definitely want to edit that file.\nPress "; 
   TEMP_COLOR=lcyan; print_color "c"; 
@@ -85,6 +90,7 @@ if [ $ERR ]; then
   exit 1
 else
   TEMP_COLOR=lgreen; print_color "OK\n"; unset TEMP_COLOR;
+  ln ${MY_ORGANIZATION}.crt ${MY_ORGANIZATION}.pem
 fi
 
 
