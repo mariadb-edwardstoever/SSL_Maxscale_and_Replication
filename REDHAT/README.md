@@ -1,4 +1,4 @@
-## REDHAT README
+## RED HAT LINUX README
 
 To use SSL connections in Maxscale and Mariadb Server, you will need to decide the following:
 
