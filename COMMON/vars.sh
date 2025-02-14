@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script by Edward Stoever for Mariadb Support
+
+# MY_ORGANIZATION WILL BE USED TO NAME FILES FOR YOUR SIGNED CERTIFICATES.
+# AVOID USING SPACES OR ODD CHARACTERS. USE [a-z] [A-Z] [0-9] [.-_]  
+MY_ORGANIZATION='widgets-and-gadgets.com'
+
+##### DEFINE HOW MANY DAYS CERTS WILL REMAIN VALID
+HOW_MANY_DAYS_VALID=3650
