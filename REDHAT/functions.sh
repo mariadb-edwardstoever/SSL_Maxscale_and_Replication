@@ -11,3 +11,7 @@ fi
   printf "\033[${i}m${1}\033[0m"
 }
 
+
+function get_linux_type () {
+  LINUX_TYPE=$(cat /etc/os-release | grep PRETTY |cut -d\" -f2 | head -c 7 | sed "s/ //g"| tr '[:lower:]' '[:upper:]')
+}
