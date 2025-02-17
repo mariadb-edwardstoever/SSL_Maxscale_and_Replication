@@ -3,15 +3,15 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 cd $SCRIPT_DIR
 source ${SCRIPT_DIR}/functions.sh
-source ${SCRIPT_DIR}/vars.sh 2>/dev/null
+source ${SCRIPT_DIR}/vars.sh
 MY_ORGANIZATION=$(echo ${MY_ORGANIZATION} | sed 's/ //g')
 
 
 unset ERR
 get_linux_type;
 
-if [ ! "${LINUX_TYPE}" == "REDHAT" ]; then
-  echo "This does not appear to be Red Hat Enterprise Linux. Exiting."; exit 1
+if [ ! "${LINUX_TYPE}" == "DEBIAN" ]; then
+  echo "This does not appear to be Debian GNU/Linux. Exiting."; exit 1
 fi
 
 

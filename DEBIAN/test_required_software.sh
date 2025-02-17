@@ -8,18 +8,18 @@ unset NEED2INSTALL
 get_linux_type;
 
 
-if [ ! "${LINUX_TYPE}" == "REDHAT" ]; then
-  echo "This does not appear to be Red Hat Enterprise Linux. Exiting."; exit 1
+if [ ! "${LINUX_TYPE}" == "DEBIAN" ]; then
+  echo "This does not appear to be Debian GNU/Linux. Exiting."; exit 1
 fi
 
 if [ ! $(which openssl 2>/dev/null) ]; then 
   NEED2INSTALL=TRUE
-  yum install openssl 
+  apt install openssl 
 fi
 
-if [ ! $(which update-ca-trust 2>/dev/null) ]; then
+if [ ! $(which update-ca-certificates 2>/dev/null) ]; then
   NEED2INSTALL=TRUE
-  yum install ca-certificates
+  apt install ca-certificates
 fi
 
 if [ ! ${NEED2INSTALL} ]; then 

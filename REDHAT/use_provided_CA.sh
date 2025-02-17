@@ -1,1 +1,0 @@
-../COMMON/use_provided_CA.sh

@@ -6,6 +6,7 @@ unset ERR
 
 source ${SCRIPT_DIR}/vars.sh
 source ${SCRIPT_DIR}/functions.sh
+if [ ! "${RSA}" == "4096" ]; then RSA=2048; fi
 
 # remove spaces if exist from MY_ORGANIZATION
 MY_ORGANIZATION=$(echo ${MY_ORGANIZATION} | sed 's/ //g')
@@ -28,7 +29,7 @@ if [ -f ${MY_ORGANIZATION}.key ]; then
 exit 0
 fi
 
-openssl genrsa -out ${MY_ORGANIZATION}.key 2048 || ERR=TRUE
+openssl genrsa -out ${MY_ORGANIZATION}.key ${RSA} || ERR=TRUE
 
 if [ $ERR ]; then 
   TEMP_COLOR=lred; print_color "Something went wrong. Try again.\n"; unset TEMP_COLOR; 

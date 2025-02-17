@@ -1,1 +1,0 @@
-../COMMON/create_own_pem.sh

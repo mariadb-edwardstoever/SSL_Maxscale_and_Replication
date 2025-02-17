@@ -1,1 +1,0 @@
-../COMMON/create_new_CA_key.sh

@@ -1,1 +1,0 @@
-../COMMON/validate_CA_pem.sh

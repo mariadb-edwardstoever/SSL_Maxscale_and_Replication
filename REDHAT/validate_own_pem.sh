@@ -1,1 +1,0 @@
-../COMMON/validate_own_pem.sh
